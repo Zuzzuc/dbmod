@@ -5,7 +5,8 @@ Database modification script
 
 ## get
 ### Will read from selected column
-Syntax is the following: `get table modifier1 modifier-value1 modifier2 modifier-value2 modifierN modifier-valueN column1 column2 columnN value1 value2 valueN``
+Syntax is the following: `get table modifier1 modifier-value1 modifierN modifier-valueN column1 columnN`
+
 Where modifier is any of the following: WHERE, AND, OR, IN, WHERE and their corresponding NOT(such as WHERE NOT)
 Where modifier-value is a declaration of a variable, such as `LastName='Smith'`
 
