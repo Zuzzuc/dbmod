@@ -22,7 +22,7 @@ Return only id and lastname from any user named Ethan.<br>
 ### Will insert value(s) into column.
 Syntax is the following: `insert Table column1 column2 columnN value1 value2 valueN`<br><br>
 
-### Example
+#### Example
 Create a new entry containing address, first and lastname.<br>
 `dbmod.sh "database.db" "insert" "myTable" "FirstName" "LastName" "Address" "John" "Smith" "387 6th Ave"`<br><br>
 
@@ -33,7 +33,7 @@ Syntax is the following: `update table modifier1 modifier-value1 modifier2 modif
 Where modifier is any of the following: WHERE, AND, OR, IN and their corresponding NOT(such as WHERE NOT)
 Where modifier-value is a declaration of a variable, such as `LastName='Smith'`
 
-### Example
+#### Example
 Change username of a user with id 233 to 'Example'<br>
 `dbmod.sh "database.db" "myTable" "update" "test" "WHERE" "id=233" "Username='Example'"`<br><br>
 
@@ -45,7 +45,7 @@ Syntax is the following: `delete table modifier1 modifier-value1 modifier2 modif
 Where modifier is any of the following: WHERE, AND, OR, IN and their corresponding NOT(such as WHERE NOT)
 Where modifier-value is a declaration of a variable, such as `LastName='Smith'`
 
-### Examples
+#### Examples
 
 Remove any entry where id equals 7.<br>
 `dbmod.sh "database.db" "delete" "test" "WHERE" "id=7"`<br><br>
@@ -58,7 +58,7 @@ Remove any entry where first name equals John and last name equal Smith.<br>
 ### Creates table with given attributes
 Syntax is the following: `createTable table "column1 datatype" "column2 datatype" "columnN datatype"`
 
-### Example
+#### Example
 Create a table named 'Customers' with three columns: id(primary key), last and first name. <br>
 `dbmod.sh "database.db" "createTable" "Customers" "id INTEGER PRIMARY KEY" "FirstName TEXT" "LastName TEXT"`<br><br>
 
@@ -66,7 +66,7 @@ Create a table named 'Customers' with three columns: id(primary key), last and f
 ### drops specified table
 Syntax is the following: `prune table`
 
-### Example
+#### Example
 Drop the table Customers<br>
 `dbmod.sh "database.db" "myTable" "prune" "Customers"`<br><br>
 
@@ -74,7 +74,7 @@ Drop the table Customers<br>
 ### Will execute any query given.
 Syntax should be formatted for sqlite3
 
-### Example
+#### Example
 List everything from Customers<br>
 `dbmod.sh "database.db" "executeCustomQuery" "SELECT * FROM myTable"`<br><br>
 
@@ -84,7 +84,7 @@ This function uses no input (other than database path)
 Lists all tables in database whitespace separated.
 
 
-### Example
+#### Example
 Get tables from 
 `dbmod.sh "database.db"`<br><br>
 
@@ -93,7 +93,7 @@ Get tables from
 Syntax is the following: `getTableInfo table`
 Lists information about all columns in an table.
 
-### Examples
+#### Examples
 Get info about the table myTable
 `dbmod.sh "database.db" "getTableInfo" "myTable"`
 
