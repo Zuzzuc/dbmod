@@ -25,7 +25,7 @@ Return all information about the user with id 5, if his name is Adam.<br>
 Return only id and lastname from any user named Ethan.<br>
 `dbmod.sh "database.db" "get" "myTable" "WHERE" "FirstName='Ethan'" "id" "LastName"`<br><br>
 
-Return all information about an entry where firstname equals George and id is between 1 and 4, or equals 21.<br>
+Return all information about an entry where firstname equals George and id is between 1 and 4, or equals 21.(Don't forget to format the input for IN as this is one of few cases when it's not done within the script itself)<br>
 `dbmod.sh "database.db" "get" "myTable" "WHERE" "FirstName='George'" "AND" "id" "IN" "('1','2','3','4','21')" "*"`<br><br>
 
 ## insert
