@@ -15,6 +15,8 @@ Syntax is the following: `get table modifier1 modifier-value1 modifierN modifier
 Where modifier is any of the following: WHERE, AND, OR, IN and their corresponding NOT(such as WHERE NOT)
 Where modifier-value is a declaration of a variable, such as `LastName='Smith'`
 
+Note: If using the modifier "IN", make sure to correctly format the values as this script will not to it in this case.
+
 #### Examples
 
 Return all information about the user with id 5, if his name is Adam.<br>
@@ -22,6 +24,9 @@ Return all information about the user with id 5, if his name is Adam.<br>
 
 Return only id and lastname from any user named Ethan.<br>
 `dbmod.sh "database.db" "get" "myTable" "WHERE" "FirstName='Ethan'" "id" "LastName"`<br><br>
+
+Return all information about an entry where firstname equals George and id is between 1 and 4, or equals 21.<br>
+`dbmod.sh "database.db" "get" "myTable" "WHERE" "FirstName='George'" "AND" "id" "IN" "('1','2','3','4','21')" "*"`<br><br>
 
 ## insert
 ### Will insert value(s) into column.
@@ -40,7 +45,7 @@ Where modifier-value is a declaration of a variable, such as `LastName='Smith'`
 
 #### Example
 Change username of a user with id 233 to 'Example'<br>
-`dbmod.sh "database.db" "myTable" "update" "test" "WHERE" "id=233" "Username='Example'"`<br><br>
+`dbmod.sh "database.db" "update" "myTable" "WHERE" "id=233" "Username='Example'"`<br><br>
 
 
 ## delete
@@ -53,10 +58,10 @@ Where modifier-value is a declaration of a variable, such as `LastName='Smith'`
 #### Examples
 
 Remove any entry where id equals 7.<br>
-`dbmod.sh "database.db" "delete" "test" "WHERE" "id=7"`<br><br>
+`dbmod.sh "database.db" "delete" "myTable" "WHERE" "id=7"`<br><br>
 
 Remove any entry where first name equals John and last name equal Smith.<br>
-`dbmod.sh "database.db" "delete" "test" "WHERE" "FirstName='John'" "AND" "LastName='Smith'"`<br><br>
+`dbmod.sh "database.db" "delete" "myTable" "WHERE" "FirstName='John'" "AND" "LastName='Smith'"`<br><br>
 
 
 ## createTable
@@ -73,7 +78,7 @@ Syntax is the following: `prune table`
 
 #### Example
 Drop the table Customers<br>
-`dbmod.sh "database.db" "myTable" "prune" "Customers"`<br><br>
+`dbmod.sh "database.db" "prune" "Customers"`<br><br>
 
 ## executeCustomQuery
 ### Will execute any query given.
