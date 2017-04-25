@@ -105,7 +105,7 @@ Get info about the table myTable<br>
 
 # Exit codes
 <br>
-0: Everything went well
-1: Unknown function called in main
-2: No database path supplied
+0: Everything went well<br>
+1: Unknown function called in main<br>
+2: No database path supplied<br>
 
