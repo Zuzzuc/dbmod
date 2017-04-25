@@ -103,7 +103,7 @@ Get info about the table myTable<br>
 `dbmod.sh "database.db" "getTableInfo" "myTable"`<br><br>
 
 
-## Exit codes
+# Exit codes
 <br>
 0: Everything went well
 1: Unknown function called in main
