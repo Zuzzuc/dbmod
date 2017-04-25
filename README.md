@@ -76,13 +76,27 @@ Syntax should be formatted for sqlite3
 
 ### Example
 List everything from Customers<br>
-`dbmod.sh "database.db" "SELECT * FROM myTable"`<br><br>
+`dbmod.sh "database.db" "executeCustomQuery" "SELECT * FROM myTable"`<br><br>
 
 ## getTables
 ### lists tables in database
+This function uses no input (other than database path)
+Lists all tables in database whitespace separated.
+
+
+### Example
+Get tables from 
+`dbmod.sh "database.db"`<br><br>
 
 ## getTableInfo
 ### lists information about specified table
+Syntax is the following: `getTableInfo table`
+Lists information about all columns in an table.
+
+### Examples
+Get info about the table myTable
+`dbmod.sh "database.db" "getTableInfo" "myTable"`
+
 
 
 
