@@ -2,9 +2,9 @@
 Database modification script
 <br>
 <br>
-This script is used to make database automation easier on small scale operations.
-<br>
-This script relies on sqlite3 and is not compatible with other variants of sql databases.
+Script used to modify sql (sqlite3) databases. 
+<br><br>
+Not compatible with any database format other than sqlite3.
 
 # Usage
 
