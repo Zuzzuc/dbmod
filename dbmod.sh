@@ -208,7 +208,7 @@ delete(){
 
 	echo will exec "$db" "DELETE FROM $table $modifier;"
 
-	sqlite3 "$db" "DELETE $cols FROM $table $modifier;"
+	sqlite3 "$db" "DELETE FROM $table $modifier;"
 	
 }
 
@@ -224,9 +224,6 @@ getTables(){
 }
 
 
-# END advanced functions
-
-# MAIN
 if [ "$1" == "get" ] || [ "$1" == "update" ] || [ "$1" == "insert" ] || [ "$1" == "delete" ] || [ "$1" == "prune" ] || [ "$1" == "getTables" ] || [ "$1" == "getTableInfo" ] || [ "$1" == "executeCustomQuery" ];then
 	"$@"
 else
