@@ -1,19 +1,15 @@
 #!/bin/bash
-#
-# dbmod.sh
+# License: The MIT License (MIT)
+# Author Zuzzuc https://github.com/Zuzzuc/
 #
 # This script is used to modify databases.
 
-set -f # Note that noglob is active! Some regex might not work.
-
+set -f # Note that noglob is active! Some regex operations might not work as intented.
 
 # Exit codes
 
 # 1=Unknown operation
 # 2=No db path supplied
-
-
-
 
 
 # Basic functions
