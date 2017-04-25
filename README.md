@@ -7,7 +7,7 @@ Database modification script
 ### Will read from selected column
 Syntax is the following: `get table modifier1 modifier-value1 modifierN modifier-valueN column1 columnN`
 
-Where modifier is any of the following: WHERE, AND, OR, IN, WHERE and their corresponding NOT(such as WHERE NOT)
+Where modifier is any of the following: WHERE, AND, OR, IN and their corresponding NOT(such as WHERE NOT)
 Where modifier-value is a declaration of a variable, such as `LastName='Smith'`
 
 Example: `dbmod.sh "db" "get" "myTable" "WHERE" "id=5" "AND" "FirstName='Adam'" "*"`
