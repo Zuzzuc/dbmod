@@ -1,7 +1,12 @@
 # dbmod
 Database modification script
+<br>
+<br>
+This script is used to make database automation easier on small scale operations.
+<br>
+This script relies on sqlite3 and is not compatible with other variants of sql databases.
 
-# Currently supported features
+# Usage
 
 ## get
 ### Will read from selected column
@@ -85,7 +90,7 @@ Lists all tables in database whitespace separated.
 
 
 #### Example
-Get tables from 
+Get tables from <br>
 `dbmod.sh "database.db"`<br><br>
 
 ## getTableInfo
@@ -94,8 +99,8 @@ Syntax is the following: `getTableInfo table`
 Lists information about all columns in an table.
 
 #### Examples
-Get info about the table myTable
-`dbmod.sh "database.db" "getTableInfo" "myTable"`
+Get info about the table myTable<br>
+`dbmod.sh "database.db" "getTableInfo" "myTable"`<br><br>
 
 
 
