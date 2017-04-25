@@ -103,5 +103,9 @@ Get info about the table myTable<br>
 `dbmod.sh "database.db" "getTableInfo" "myTable"`<br><br>
 
 
-
+## Exit codes
+<br>
+0: Everything went well
+1: Unknown function called in main
+2: No database path supplied
 
