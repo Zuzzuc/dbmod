@@ -44,7 +44,7 @@ fi
 
 # Advanced functions
 
-executeCustomQuery(){ # Should it be all following instead of just $1? No, because it only accepts one input right? Maybe make a fix by using x=$@ first
+executeCustomQuery(){ 
 	# Usage is $1, where $1 is the custom query to execute. 
 	# This assumes the database path is already set in $db
 	sqlite3 "$db" "$1"
@@ -56,7 +56,7 @@ createTable(){
 	# NOTE: This will format the input, since it is known to be columns.
 	table="$1" && shift
 	
-	for i in $@; do
+	for i in "$@"; do
 		if [ "$1" != "" ]; then
        		dbexec+=",$1"
        		shift
@@ -120,7 +120,7 @@ get(){
 		fi
 	done
 	
-	for i in $@; do
+	for i in "$@"; do
 		if [ "$1" != "" ]; then
        		cols+=",$1"
        		shift
@@ -133,7 +133,7 @@ get(){
 }
 
 update(){
-	# Usage is $@, where $1 is the table, the following are conditions and its values and the rest is columns..
+	# Usage is $@, where $1 is the table, the following are conditions and its values and the rest is columns.
 
 	
 	table="$1" && shift
@@ -153,7 +153,7 @@ update(){
 		fi
 	done
 	
-	for i in $@; do
+	for i in "$@"; do
 		if [ "$1" != "" ]; then
        		vals+=",$1"
        		shift
@@ -193,7 +193,6 @@ delete(){
 		if [ "$(turnToUpperCase "$1")" == "WHERE" ] || [ "$(turnToUpperCase "$1")" == "AND" ] || [ "$(turnToUpperCase "$1")" == "OR" ] || [ "$(turnToUpperCase "$1")" == "LIKE" ] ||[ "$(turnToUpperCase "$1")" == "WHERE NOT" ] || [ "$(turnToUpperCase "$1")" == "AND NOT" ] || [ "$(turnToUpperCase "$1")" == "OR NOT" ] || [ "$(turnToUpperCase "$1")" == "NOT LIKE" ];then
 			modifier+="$1 $2 " 
 			shift && shift
-		# Make it so if it is 'IN', require next one to be fully prefixed, eg "('Kalmar', 'Uppsala')"
 		elif [ "$(turnToUpperCase "$1")" == "IN" ];then
 			modifier+="$1 $2 "
 			shift && shift
@@ -215,7 +214,7 @@ getTableInfo(){
 
 getTables(){
 	# No input. 
-	# Note that the output will be whitespace separerad.
+	# Note that the output will be whitespace separerad. 
 	sqlite3 "$db" ".tables"
 }
 
@@ -226,5 +225,3 @@ else
 	echo "'$1' is not a function"
 	exit 1
 fi
-
-
