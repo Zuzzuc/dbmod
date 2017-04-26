@@ -2,7 +2,7 @@
 Database modification script
 <br>
 <br>
-A lightweight, fast executing script used to modify sql (sqlite3) databases.
+A lightweight, fast executing script, used to modify sql (sqlite3) databases.
 <br><br>
 Not compatible with any database format other than sqlite3.
 
