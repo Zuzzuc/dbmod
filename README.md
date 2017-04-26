@@ -90,7 +90,7 @@ List everything from Customers<br>
 
 ## getTables
 ### lists tables in database
-This function uses no input (other than database path)
+This function uses no input (other than database path)<br>
 Lists all tables in database whitespace separated.
 
 
@@ -100,7 +100,7 @@ Get tables from <br>
 
 ## getTableInfo
 ### lists information about specified table
-Syntax is the following: `getTableInfo table`
+Syntax is the following: `getTableInfo table`<br>
 Lists information about all columns in an table.
 
 #### Examples
