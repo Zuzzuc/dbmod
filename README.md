@@ -95,7 +95,7 @@ Lists all tables in database whitespace separated.
 
 
 #### Example
-Get tables from <br>
+Get tables from database.db<br>
 `dbmod.sh "database.db"`<br><br>
 
 ## getTableInfo
