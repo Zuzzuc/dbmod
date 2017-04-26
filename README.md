@@ -2,7 +2,7 @@
 Database modification script
 <br>
 <br>
-A lightweight script used to modify sql (sqlite3) databases with fast execution times.
+A lightweight, fast executing script used to modify sql (sqlite3) databases.
 <br><br>
 Not compatible with any database format other than sqlite3.
 
@@ -15,7 +15,7 @@ Syntax is the following: `get table modifier1 modifier-value1 modifierN modifier
 Where modifier is any of the following: WHERE, AND, OR, IN and their corresponding NOT(such as WHERE NOT)
 Where modifier-value is a declaration of a variable, such as `LastName='Smith'`
 
-Note: If using the modifier "IN", make sure to correctly format the values as this script will not to it in this case.
+Note: If using the modifier "IN", make sure to correctly format the values as this script will not do it in this case.
 
 #### Examples
 
