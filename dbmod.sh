@@ -108,7 +108,7 @@ get(){
 	break=1
 	while [ $break -ne 0 ];do
 		
-		if [ "$(turnToUpperCase "$1")" == "WHERE" ] || [ "$(turnToUpperCase "$1")" == "AND" ] || [ "$(turnToUpperCase "$1")" == "OR" ] || [ "$(turnToUpperCase "$1")" == "WHERE NOT" ] || [ "$(turnToUpperCase "$1")" == "AND NOT" ] || [ "$(turnToUpperCase "$1")" == "OR NOT" ];then
+		if [ "$(turnToUpperCase "$1")" == "WHERE" ] || [ "$(turnToUpperCase "$1")" == "AND" ] || [ "$(turnToUpperCase "$1")" == "OR" ] || [ "$(turnToUpperCase "$1")" == "LIKE" ] ||[ "$(turnToUpperCase "$1")" == "WHERE NOT" ] || [ "$(turnToUpperCase "$1")" == "AND NOT" ] || [ "$(turnToUpperCase "$1")" == "OR NOT" ] || [ "$(turnToUpperCase "$1")" == "NOT LIKE" ];then
 			modifier+="$1 $2 " 
 			shift && shift
 		# Make it so if it is 'IN', require next one to be fully prefixed, eg "('Kalmar', 'Uppsala')"
@@ -219,7 +219,7 @@ getTables(){
 	sqlite3 "$db" ".tables"
 }
 
-
+# main
 if [ "$1" == "get" ] || [ "$1" == "update" ] || [ "$1" == "insert" ] || [ "$1" == "delete" ] || [ "$1" == "prune" ] || [ "$1" == "getTables" ] || [ "$1" == "getTableInfo" ] || [ "$1" == "executeCustomQuery" ];then
 	"$@"
 else
