@@ -219,7 +219,7 @@ getTables(){
 }
 
 # main
-if [ "$1" == "get" ] || [ "$1" == "update" ] || [ "$1" == "insert" ] || [ "$1" == "delete" ] || [ "$1" == "prune" ] || [ "$1" == "getTables" ] || [ "$1" == "getTableInfo" ] || [ "$1" == "executeCustomQuery" ];then
+if [ "$1" == "get" ] || [ "$1" == "update" ] || [ "$1" == "insert" ] || [ "$1" == "createTable" ] || [ "$1" == "delete" ] || [ "$1" == "prune" ] || [ "$1" == "getTables" ] || [ "$1" == "getTableInfo" ] || [ "$1" == "executeCustomQuery" ];then
 	"$@"
 else
 	echo "'$1' is not a function"
