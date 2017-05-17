@@ -44,6 +44,16 @@ fi
 
 # Advanced functions
 
+unsetAll(){
+	# Unsets all commonly used variables. This is good to use if running this script inline.
+	unset cols
+	unset vals
+	unset count
+	unset dbexec
+	unset modifier
+	unset table
+}
+
 executeCustomQuery(){ 
 	# Usage is $1, where $1 is the custom query to execute. 
 	# This assumes the database path is already set in $db
@@ -164,14 +174,6 @@ update(){
 	
 	sqlite3 "$db" "UPDATE $table SET $vals $modifier;"
 	
-	# TMP FIX
-	
-	unset cols
-	unset vals
-	unset count
-	unset dbexec
-	unset modifier
-	
 }
 
 prune(){
@@ -221,6 +223,7 @@ getTables(){
 # main
 if [ "$1" == "get" ] || [ "$1" == "update" ] || [ "$1" == "insert" ] || [ "$1" == "createTable" ] || [ "$1" == "delete" ] || [ "$1" == "prune" ] || [ "$1" == "getTables" ] || [ "$1" == "getTableInfo" ] || [ "$1" == "executeCustomQuery" ];then
 	"$@"
+	unsetAll
 else
 	echo "'$1' is not a function"
 	exit 1
